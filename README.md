@@ -16,7 +16,11 @@ WAR is an attempt by the sabermetric baseball community to summarize a player’
 
 WAR offers an estimate to answer the question, “If this player got injured and their team had to replace them with a freely available minor leaguer or a [AAAA player](https://www.baseball-reference.com/bullpen/AAAA_player) from their bench, how much value would the team be losing?” 
 
-This value is expressed in a wins format, so we could say that Player X is worth +6.3 wins to their team while Player Y is only worth +3.5 wins, which means it is highly likely that Player X has been more valuable than Player Y.
+This value is expressed in a wins format, so we could say that Player X is worth +6.3 wins to their team while Player Y is only worth +3.5 wins, which means it is highly likely that Player X has been more valuable than Player Y. For a breakdown of how WAR is calculated for Position Players and Pitchers, the formulas are below:
+
+**Position Player WAR** = (Batting Runs + Base Running Runs + Fielding Runs + Positional Adj + League Adj + Replacement Runs) / (Runs Per Win) 
+
+**Pitcher WAR** = [([(League “FIP” - “FIP”) / Pitcher Specific Runs Per Win] + Replacement Level) * IP/9) * Leverage Multiplier for Relievers] + League Correction
 
 Now that we have a general understanding of WAR, that leads up to our project objective and hypothesis. 
 
