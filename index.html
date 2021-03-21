@@ -35,9 +35,15 @@
     <h1>Description</h1>
     <p>There are many different metrics to measure how good or valuable a baseball player is throughout a season. One metric is Wins Above Replacement or WAR. WAR is an attempt by the sabermetric baseball community to summarize a player’s total contributions to their team in one statistic. You should always use more than one metric at a time when evaluating players, but WAR is all-inclusive and provides a useful reference point for comparing players.
         WAR offers an estimate to answer the question, “If this player got injured and their team had to replace them with a freely available minor leaguer or a AAAA player from their bench, how much value would the team be losing?”
-        This value is expressed in a wins format, so we could say that Player X is worth +6.3 wins to their team while Player Y is only worth +3.5 wins, which means it is highly likely that Player X has been more valuable than Player Y.
-
+        This value is expressed in a wins format, so we could say that Player X is worth +6.3 wins to their team while Player Y is only worth +3.5 wins, which means it is highly likely that Player X has been more valuable than Player Y. 
+        <br><br>
+        <a href="https://library.fangraphs.com/war/war-position-players/"><b>Position Player WAR</b></a> = (Batting Runs + Base Running Runs + Fielding Runs + Positional Adj + League Adj + Replacement Runs) / (Runs Per Win)
+        <br>
+     <a href="https://library.fangraphs.com/war/calculating-war-pitchers/><b>Pitcher WAR</b></a> = [([(League “FIP” - “FIP”) / Pitcher Specific Runs Per Win] + Replacement Level) * IP/9) * Leverage Multiplier for Relievers] + League Correction
+        <br><br>
         Our hypothesis is that for players as their contract is nearing its ending term the player's WAR value will increase.
+        <br><br>
+        For more information about WAR, please hit the above links within the Position Player/Pitcher WAR formulas. 
     </p>
 </section>
 
@@ -86,6 +92,7 @@
     <p>
         Since our hypothesis was that a player's WAR wouldn't follow a linear pattern we had to try a different approach using the random RandomForestRegressor.
         Just by tweaking the type of model we were using we were able to achieve an accuracy of 98.3% with an R^2
+        <br> In making this pivot, we removed the year, team, league, and Team Payroll features from our dataset to combat collinearity.
     </p>
 </section>
 
@@ -118,8 +125,8 @@
         <img src="img/charts/FeatImpScores.png" alt="important scores" class="charts">
 
       <p>
-      The accuracy score of our data means that it will predict the WAR score accurately for the X data set 95% of the time, the training set 99% of the time,
-      and the testing set 92% of the time. These models are proven to be extremely accurate in prediction based on their high accuracy scores.
+      The accuracy score of our data means that it will predict the WAR score accurately for the X data set 98.3% of the time, the training set 98.3% of the time,
+      and the testing set 93.7% of the time. While we were ultimately unable to prove our hypothseis, these models have proven to be extremely accurate in prediction based on their high accuracy scores.
       </p>
 </section>
 
